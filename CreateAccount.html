@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Bootdtrap</title>
+    <style>
+        #satmonths {
+            margin: 0px 20px !important;
+        }
+
+        .btn-set-creat {
+            background-color: #1b3254;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 0px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .return-store {
+            margin-left: calc(50% - 100px);
+            color: #1b3254;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #1b3254;
+        }
+
+        .return-store:hover {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="col-12 col-md-6">
+            <div class="container-txt">
+                <h2>CREATE AN ACCOUNT</h2>
+            </div>
+            <div class="container-form">
+                <form>
+                    <div class="form-group">
+                        <label for="input-fname">FIRST NAMEs</label>
+                        <input type="text" class="form-control" id="input-fname" placeholder="Enter first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-lname">LAST NAME</label>
+                        <input type="text" class="form-control" id="input-lname" placeholder="Enter last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-email">Email</label>
+                        <input type="email" class="form-control" id="input-email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-phone">TELEPHONE</label>
+                        <input type="tel" class="form-control" id="input-phone" placeholder="Telephone">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-birth">DATE OF BIRTH</label>
+                        <div class="form-row">
+                            <select id="setdays" class="form-control col-md-3" id="input-birth">
+                                <option selected>Day</option>
+                            </select>
+                            <select id="satmonths" class="form-control col-md-5" id="input-birth">
+                                <option selected>Month</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                            <select id="setyears" class="form-control col-md-3" id="input-birth">
+                                <option selected>Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group md-5">
+                        <label for="input-password">Password</label>
+                        <input type="password" class="form-control" id="input-password" placeholder="password">
+                    </div>
+                    <div class="form-group form-check md-5">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">I have read and agreed to our Terms &
+                            Conditions</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-set-creat">CREAT ACCOUNT</button>
+                    <a class="return-store" href="#" role="button">RETURN TO STORE</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+    <script>
+        var onload = function () {
+            var year = new Date().getFullYear();
+            var sel = document.getElementById('setyears');
+            for (var i = year; i > 1916; i--) {
+                var option = document.createElement('option');
+                option.value = i;
+                var txt = document.createTextNode(i);
+                option.appendChild(txt);
+                setyears.appendChild(option)
+            }
+            var sel = document.getElementById('setdays');
+            for (var i = 1; i < 32; i++) {
+                var option = document.createElement('option');
+                option.value = i;
+                var txt = document.createTextNode(i);
+                option.appendChild(txt);
+                setdays.appendChild(option);
+            }
+        }
+    </script>
+</body>
+
+</html>
